@@ -30,8 +30,11 @@
             </tbody>
         </table><h2>অর্ডার করুণ</h2>
     <form action="#" method="post">
+     
         <label for="uid">Free Fire UID:</label>
+        
         <input type="text" id="uid" name="uid" placeholder="আপনার UID লিখুন" required />
+        
 
         <label for="name">Player Name:</label>
         <input type="text" id="name" name="name" placeholder="PLAYER NAME" required />
