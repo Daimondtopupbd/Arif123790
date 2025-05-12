@@ -67,7 +67,3 @@
 </div>
 <footer>
     &copy; 2025 Free Fire Diamond Shop
-</footer>
-
-</body>
-</html>
