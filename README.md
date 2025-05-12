@@ -1,8 +1,4 @@
-
-</head>
-<body>
-    <header>
-        <h1>Free Fire Diamond &amp; Membership</h1>
+ <h1>Free Fire Diamond &amp; Membership</h1>
     </header>
     <div class="container">
         <h2>প্রোডাক্ট প্রাইস লিস্ট</h2>
