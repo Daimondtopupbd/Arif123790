@@ -17,6 +17,7 @@
     .success { text-align: center; color: green; margin-top: 20px; font-weight: bold; }
     .whatsapp { text-align: center; margin-top: 20px; }
     .whatsapp a { text-decoration: none; color: #25D366; font-weight: bold; }
+    .notice { margin-top: 20px; text-align: center; font-size: 15px; color: #e8491d; font-weight: bold; }
   </style>
 </head>
 <body>
@@ -59,6 +60,10 @@
 
     <p style="text-align:center; margin-top:10px;">
       Payment to: <strong>bKash Personal - 01741986806 (Send Money)</strong>
+    </p>
+
+    <p class="notice">
+      ১০ মিনিটের ভিতরে ডেলিভারি না পেলে হোয়াটসঅ্যাপে স্ক্রিনশট এবং গেমের ইউআইডি দিয়ে রাখবেন।
     </p>
   </div>
 
