@@ -2,76 +2,165 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Free Fire Diamond Top-up</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>X-VPN Login</title>
   <style>
-    body { font-family: sans-serif; background: #f9f9f9; padding: 20px; }
-    .container { max-width: 600px; margin: auto; background: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
-    h1 { text-align: center; color: #e8491d; }
-    label { display: block; margin: 10px 0 5px; }
-    select, input[type="text"], input[type="number"] {
-      width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px;
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #2f3542, #1e90ff);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
     }
-    button { background: #e8491d; color: #fff; border: none; padding: 12px; width: 100%; border-radius: 5px; cursor: pointer; margin-top: 15px; }
-    button:hover { background: #cf3c14; }
-    .success { text-align: center; color: green; margin-top: 20px; font-weight: bold; }
-    .whatsapp { text-align: center; margin-top: 20px; }
-    .whatsapp a { text-decoration: none; color: #25D366; font-weight: bold; }
-    .notice { margin-top: 20px; text-align: center; font-size: 15px; color: #e8491d; font-weight: bold; }
+
+    .login-box {
+      background: #fff;
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+      width: 90%;
+      max-width: 350px;
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .login-box h2 {
+      margin-bottom: 25px;
+      color: #1e90ff;
+    }
+
+    .login-box input[type="text"],
+    .login-box input[type="password"] {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 16px;
+    }
+
+    .login-box input[type="checkbox"] {
+      margin-right: 5px;
+    }
+
+    .login-box button {
+      background: #1e90ff;
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      margin-top: 15px;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .login-box button:hover {
+      background: #3742fa;
+    }
+
+    .message {
+      margin-top: 15px;
+      color: red;
+      font-size: 14px;
+    }
+
+    .server-status {
+      margin-top: 40px;
+      background: #fff;
+      padding: 20px;
+      border-radius: 15px;
+      width: 90%;
+      max-width: 400px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    }
+
+    .server-status h3 {
+      color: #1e90ff;
+      margin-bottom: 15px;
+    }
+
+    .server {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 0;
+      border-bottom: 1px solid #ddd;
+      font-size: 16px;
+    }
+
+    .server:last-child {
+      border-bottom: none;
+    }
+
+    .online {
+      color: green;
+      font-weight: bold;
+    }
+
+    .offline {
+      color: red;
+      font-weight: bold;
+    }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Free Fire Diamond Top-up</h1>
 
-    <form id="orderForm">
-      <label for="product">Select Product</label>
-      <select id="product" required>
-        <option value="">--Choose--</option>
-        <option value="115">115 Diamonds - 85৳</option>
-        <option value="240">240 Diamonds - 160৳</option>
-        <option value="480">480 Diamonds - 240৳</option>
-        <option value="610">610 Diamonds - 400৳</option>
-        <option value="1240">1240 Diamonds - 800৳</option>
-        <option value="2530">2530 Diamonds - 1600৳</option>
-        <option value="weekly">Weekly Membership - 165৳</option>
-        <option value="monthly">Monthly Membership - 800৳</option>
-      </select>
-
-      <label for="uid">Free Fire UID</label>
-      <input type="text" id="uid" required placeholder="Enter your Free Fire UID">
-
-      <label for="name">In-Game Name</label>
-      <input type="text" id="name" required placeholder="Enter your in-game name">
-
-      <label for="trxid">bKash Transaction ID</label>
-      <input type="text" id="trxid" required placeholder="Enter TrxID after payment">
-
-      <button type="submit">Submit Order</button>
-    </form>
-
-    <div class="success" id="successMsg" style="display:none;">
-      আপনার অর্ডার প্রসেসিং হচ্ছে...
+  <div class="login-box">
+    <h2>X-VPN Login</h2>
+    <input type="text" id="username" placeholder="Username" />
+    <input type="password" id="password" placeholder="Password" />
+    <div style="text-align: left; margin-top: 10px;">
+      <input type="checkbox" onclick="togglePassword()"> Show Password
     </div>
+    <button onclick="login()">Login</button>
+    <div class="message" id="msgBox"></div>
+  </div>
 
-    <div class="whatsapp">
-      যোগাযোগ: <a href="https://wa.me/8801947612356" target="_blank">WhatsApp Chat</a>
+  <div class="server-status">
+    <h3>🔌 VPN Server Status</h3>
+    <div class="server">
+      <span>🇺🇸 USA - 185.123.45.67:1194</span>
+      <span id="srv1" class="online">Online</span>
     </div>
-
-    <p style="text-align:center; margin-top:10px;">
-      Payment to: <strong>bKash Personal - 01741986806 (Send Money)</strong>
-    </p>
-
-    <p class="notice">
-      ১০ মিনিটের ভিতরে ডেলিভারি না পেলে হোয়াটসঅ্যাপে স্ক্রিনশট এবং গেমের ইউআইডি দিয়ে রাখবেন।
-    </p>
+    <div class="server">
+      <span>🇸🇬 Singapore - 91.200.34.21:443</span>
+      <span id="srv2" class="offline">Offline</span>
+    </div>
+    <div class="server">
+      <span>🇩🇪 Germany - 80.55.22.33:2080</span>
+      <span id="srv3" class="online">Online</span>
+    </div>
   </div>
 
   <script>
-    document.getElementById('orderForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      document.getElementById('successMsg').style.display = 'block';
-    });
+    function togglePassword() {
+      const pass = document.getElementById("password");
+      pass.type = pass.type === "password" ? "text" : "password";
+    }
+
+    function login() {
+      const user = document.getElementById("username").value;
+      const pass = document.getElementById("password").value;
+      const msg = document.getElementById("msgBox");
+
+      if (user === "admin" && pass === "123456") {
+        msg.style.color = "green";
+        msg.innerText = "Login successful! Redirecting...";
+        setTimeout(() => {
+          window.location.href = "dashboard.html"; // আপনার পেজের লিংক
+        }, 1500);
+      } else {
+        msg.style.color = "red";
+        msg.innerText = "Invalid username or password.";
+      }
+    }
+
+    // Future enhancement: বাস্তব স্ট্যাটাস চেক করতে backend API লাগবে
+    // fetch("/api/check-server-status").then(...)
   </script>
+
 </body>
 </html>
